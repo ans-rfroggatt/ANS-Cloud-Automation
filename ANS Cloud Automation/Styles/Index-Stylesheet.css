@@ -1,0 +1,29 @@
+/* Index Text */
+.index-information {
+    position: absolute;
+    z-index: 15;
+    top: 50%;
+    left: 50%;
+    margin: -150px 0 0 -500px;
+    text-align:center;
+    font-size: 50px;
+    padding:50px;
+    height:200px;
+    width:1000px
+}
+
+/* Index Images */
+.index-platforms-aws {
+    display: block;
+    position:relative;
+    min-height:1px;
+    float:left;
+    padding-top:15px
+}
+.index-platforms-azure {
+    display: block;
+    position:relative;
+    min-height:1px;
+    float:right;
+    padding-top:30px
+}
