@@ -26,7 +26,7 @@ include 'Template.php';
     </div>
     <div class="col-sm-1">
         <a href="azure repository.php">
-            <p> Enable HUB Licensing</p>
+            <p> Test Script</p>
             <img src="Images/Powershell_icon.png" class="img-responsive" style="width:100%" alt="Image"
         </a>
     </div>

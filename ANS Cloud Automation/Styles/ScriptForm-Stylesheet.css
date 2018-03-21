@@ -1,5 +1,42 @@
 /* Script Form */
-.script-form {padding: 10px}
+.script-form {
+    padding-left:10px;
+    padding-right:10px;
+    margin:50px
+}
+
+.script-output {
+    padding-left:10px;
+    padding-right:10px;
+    margin:50px 
+    
+}
+.no-fields {
+    text-align:center;
+    padding-left:10px;
+    padding-right:10px;
+    margin:50px    
+}
+
+button [type=submit] {
+    display:inline;
+    margin-left:auto;
+    margin-right:auto;
+    width:8%;
+    background-color:#52347c;
+    color: white;
+    padding: 12px 20px;
+    padding-top:20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+button [type=submet]:hover {
+    background-color: #53345c;
+}
+
+
 
 /* Style inputs with type="text", select elements and textareas */
 input[type=text], select, textarea {
@@ -29,7 +66,11 @@ input[type=password], select, textarea {
 
 /* Style the submit button with a specific background color etc */
 input[type=submit] {
-    background-color: #4CAF50;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    width:10%;
+    background-color:#52347c;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -39,7 +80,7 @@ input[type=submit] {
 
 /* When moving the mouse over the submit button, add a darker green color */
 input[type=submit]:hover {
-    background-color: #45a049;
+    background-color: #53345c;
 }
 
 /* Add a background color and some padding around the form */
