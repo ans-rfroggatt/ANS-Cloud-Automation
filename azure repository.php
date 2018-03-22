@@ -25,8 +25,8 @@ include 'Template.php';
         </a>
     </div>
     <div class="col-sm-1">
-        <a href="azure repository.php">
-            <p> Test Script</p>
+        <a href="/Azure Script Pages/Azure Zombie VHDs (ARM).php">
+            <p> Azure Zombie VHDs (ARM)</p>
             <img src="/Images/Powershell_icon.png" class="img-responsive" style="width:100%" alt="Image"
         </a>
     </div>
