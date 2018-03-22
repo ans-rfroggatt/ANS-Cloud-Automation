@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <?php
-include 'Template.php';
+include '/Template.php';
 ?>
-<link rel="stylesheet" href="Styles/Index-Stylesheet.css">
+<link rel="stylesheet" href="/Styles/Index-Stylesheet.css">
 
 
 <!-- Banner -->
@@ -19,10 +19,10 @@ include 'Template.php';
     <h2> This Web App contains Automation Scripts to assist in managing, maintaining and creating Public Cloud Environments on Microsoft Azure and Amazon Web Services. To browse the script repositories please select your Cloud Platform below.</h2>
 
     <a href="aws repository">
-        <img  class="index-platforms-aws" src="/ANS Cloud Automation/Images/aws_logo_relative.JPG" style="width:40%">
+        <img  class="index-platforms-aws" src="/Images/aws_logo_relative.JPG" style="width:40%">
     </a>   
     <a href="azure repository">
-        <img class="index-platforms-azure" src="/ANS Cloud Automation/Images/azure_logo_relative.JPG" style="width:40%">
+        <img class="index-platforms-azure" src="/Images/azure_logo_relative.JPG" style="width:40%">
     </a>             
 </div>
 

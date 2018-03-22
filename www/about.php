@@ -1,8 +1,8 @@
 <?php
-include 'Template.php';
+include '/Template.php';
 ?>
 
-<link rel="stylesheet" href="/ANS Cloud Automation/Styles/Index-Stylesheet.css">
+<link rel="stylesheet" href="/Styles/Index-Stylesheet.css">
 
 <!-- Banner -->
 <div class="page-banner">
