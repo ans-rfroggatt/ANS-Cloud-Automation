@@ -52,7 +52,7 @@ elseif((isset($_POST["submit"])) && (!empty($_POST["username"])) && (!empty($_PO
     $searchstring = $_POST["searchstring"];
          
     // Path to the PowerShell script. Remember double backslashes:
-    $psScriptPath = "../Azure-Scripts/Azure-Zombie-VHDs-(ARM).ps1";
+    $psScriptPath = "../Azure-Scripts/Azure-Zombie-VHDs-ARM.ps1";
  
     // Execute the PowerShell script, passing the parameters:
     $query = shell_exec("powershell -command $psScriptPath -username '$username' -password '$password' -subId '$subid' -option '$option' -resourcegroup $resourcegroup -StorageAccountName $StorageAccountName -searchstring $searchstring");

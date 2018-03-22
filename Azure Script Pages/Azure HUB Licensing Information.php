@@ -19,9 +19,9 @@ if(!isset($_POST["submit"]))
     ?>
     <div class="script-form" >
     <form class="script-form" name="testForm" id="testForm" action="Azure HUB Licensing Information.php" method="post" />
-        Username:  <input type="text" name="username" id="username" maxlength="40" value="<?php echo 'username@company.com'; ?>" /><br />	
-	Password:  <input type="password" name="password" id="password" /><br />       		
-	Azure Subscription ID: <input type="text" name="subid" id="subid" minlength="36" maxlength="36" value="<?php echo 'abcdefgh-1234-5678-abcd-123456789abc'; ?>" /><br />	
+        Username*:  <input type="text" name="username" id="username" maxlength="40" value="<?php echo 'username@company.com'; ?>" /><br />	
+	Password*:  <input type="password" name="password" id="password" /><br />       		
+	Azure Subscription ID*: <input type="text" name="subid" id="subid" minlength="36" maxlength="36" value="<?php echo 'abcdefgh-1234-5678-abcd-123456789abc'; ?>" /><br />	
         <input type="submit" name="submit" id="submit" value="Submit" />
     </form>
     </div>
@@ -34,8 +34,6 @@ elseif((isset($_POST["submit"])) && (!empty($_POST["username"])) && (!empty($_PO
     $username = $_POST["username"];
     $password = $_POST["password"];
     $subid = $_POST["subid"];
-    // Best practice tip: We run out POST data through a custom regex function to clean any unwanted characters, e.g.:
-    // $username = cleanData($_POST["username"]);
          
     // Path to the PowerShell script. Remember double backslashes:
     $psScriptPath = "../Azure-Scripts/Azure-HUB-Licensing-Information.ps1";
@@ -48,7 +46,6 @@ elseif((isset($_POST["submit"])) && (!empty($_POST["username"])) && (!empty($_PO
         <p><?= $query ?></p>    
     </div>    
     <?php 
-    
     
     // Button to download CSV
     $user = explode('@',$username);
