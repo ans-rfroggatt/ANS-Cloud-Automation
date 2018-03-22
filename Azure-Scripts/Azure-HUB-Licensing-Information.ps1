@@ -18,9 +18,11 @@ $secpassword = ConvertTo-SecureString -String $password -AsPlainText -Force
 $Credentials = New-Object System.Management.Automation.PSCredential ($username, $secpassword)
 
 
-#Install and Import AzureRM Module
+#Import AzureRM Module
+$env:PSModulePath = $env:PSModulePath + ";D:\home\site\wwwroot\Modules"
+
 Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Importing module... <br />"
-Import-Module D:\home\site\wwwroot\Modules\AzureRM -ErrorVariable ModuleError -ErrorAction SilentlyContinue
+Import-Module $PSScriptRoot\..\Modulest\AzureRM -Name
 Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Successfully Imported module <br />"
 Write-Output "<p> </p>"
 
