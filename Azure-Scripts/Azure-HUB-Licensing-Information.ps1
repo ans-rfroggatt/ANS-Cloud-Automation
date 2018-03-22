@@ -47,7 +47,7 @@ $file = $username.Split('@')
 $file = $file[0] + $subid
 
 #Set CSV Headers and Path
-$CSVPath = "\www\Azure-Script-Exports"
+$CSVPath = "D:\home\site\wwwroot\Azure-Script-Exports"
 
 """VMName"",""ResourceGroup"",""VMSize"",""HUB Enabled"",""Number of Cores"",""OSType"",""Required Licenses""" | Out-File -Encoding ASCII -FilePath "$CSVPath\$file-HubCSV.csv"
 
