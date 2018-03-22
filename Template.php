@@ -21,11 +21,11 @@ body {font-family: "Lato", sans-serif}
     <img class="w3-azureicon" src="/Images/Azure_logo.png">
     <img class="w3-awsicon"src="/Images/aws_logo.jpg"> 
     
-    <a href="/index" class="w3-title w3-padding-large">ANS Cloud Automation</a>
-    <a href="/about" class="w3-button w3-padding-large">ABOUT</a>
-    <a href="/azure repository" class="w3-button w3-padding-large">AZURE</a>
-    <a href="/aws repository" class="w3-button w3-padding-large">AWS</a>
-    <a href="/index" class="w3-button w3-padding-large">HOME</a>
+    <a href="/index.php" class="w3-title w3-padding-large">ANS Cloud Automation</a>
+    <a href="/about.php" class="w3-button w3-padding-large">ABOUT</a>
+    <a href="/azure repository.php" class="w3-button w3-padding-large">AZURE</a>
+    <a href="/aws repository.php" class="w3-button w3-padding-large">AWS</a>
+    <a href="/index.php" class="w3-button w3-padding-large">HOME</a>
   </div>
 </div>
 
