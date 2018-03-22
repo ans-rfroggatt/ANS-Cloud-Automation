@@ -20,13 +20,7 @@ $Credentials = New-Object System.Management.Automation.PSCredential ($username, 
 
 #Install and Import AzureRM Module
 Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Importing module... <br />"
-Import-Module -Name AzureRM -ErrorVariable ModuleError -ErrorAction SilentlyContinue
-If ($ModuleError) {
-    Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Installing module... <br />"
-    Install-Module -Name AzureRM
-    Import-Module -Name AzureRM
-    Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Successfully Installed module... <br />"
-}
+Import-Module D:\home\site\wwwroot\Modules\AzureRM -ErrorVariable ModuleError -ErrorAction SilentlyContinue
 Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Successfully Imported module <br />"
 Write-Output "<p> </p>"
 
