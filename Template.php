@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <base href="ANS Cloud Automation">
-<link rel="stylesheet" href="/ANS Cloud Automation/Styles/Template-StyleSheet.css">
+<link rel="stylesheet" href='@Url.Content("/ANS Cloud Automation/Styles/Template-StyleSheet.css")'>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 
 <style>
