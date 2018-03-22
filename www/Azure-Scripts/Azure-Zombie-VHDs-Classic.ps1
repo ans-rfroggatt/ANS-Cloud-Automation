@@ -17,15 +17,15 @@ $secpassword = ConvertTo-SecureString -String $password -AsPlainText -Force
 $Credentials = New-Object System.Management.Automation.PSCredential ($username, $secpassword)
 
 #Install/Import Azure Module
-Write-Host "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Importing module... <br />"
+Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Importing module... <br />"
 Import-Module -Name Azure -ErrorVariable ModuleError -ErrorAction SilentlyContinue
 If ($ModuleError) {
-    Write-Host "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Installing module... <br />"
+    Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Installing module... <br />"
     Install-Module -Name Azure
     Import-Module -Name Azure
-    Write-Host "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Successfully Installed module... <br />"
+    Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Successfully Installed module... <br />"
 }
-Write-Host "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Successfully Imported Module <br />"
+Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Successfully Imported Module <br />"
 Write-Output "<p> </p>"
 
 #Login to Azure Environment
@@ -50,7 +50,7 @@ $CSVPath = "D:\home\site\wwwroot\Azure-Script-Exports"
 $DISKOUTPUT = @()
 foreach ($STORAGEACCOUNT in Get-AzureStorageAccount )
     {
-    Write-Host "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Processing Storage Account - $STORAGEACCOUNT <br />"
+    Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Processing Storage Account - $STORAGEACCOUNT <br />"
     
     Get-AzureDisk | where-Object {$_.MediaLink.Host.Contains($STORAGEACCOUNT.StorageAccountName)} | Where-Object -Property AttachedTo -EQ $null | 
     Select @{L="StorageAccount";E={$STORAGEACCOUNT.StorageAccountName}}, DiskName, DiskSizeInGB, SourceImageName, Location | ForEach-Object {
