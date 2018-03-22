@@ -36,6 +36,12 @@ include 'Template.php';
             <img src="/Images/Powershell_icon.png" class="img-responsive" style="width:100%" alt="Image"
         </a>
     </div>
+    <div class="col-sm-1">
+        <a href="/Azure Script Pages/Azure Modernisation.php">
+            <p>Azure VM Modernisation</p>
+            <img src="/Images/Powershell_icon.png" class="img-responsive" style="width:100%" alt="Image"
+        </a>
+    </div>
   </div>
 </div><br>
 
