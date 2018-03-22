@@ -42,10 +42,15 @@ Select-AzureRmSubscription -SubscriptionId $subId
 Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Subscription successfully selected <br />"
 Write-Output "<p> </p>"
 
-#Set CSV Headers and Path
-$CSVPath = "C:\Users\rfroggatt\Downloads\Ryan\Script Exports"
+#Create File Name
+$file = $username.Split('@')
+$file = $file[0] + $subid
 
-"""VMName"",""ResourceGroup"",""VMSize"",""HUB Enabled"",""Number of Cores"",""OSType"",""Required Licenses""" | Out-File -Encoding ASCII -FilePath "$CSVPath\Azure HUB Licensing.csv"
+#Set CSV Headers and Path
+$CSVPath = "\www\Azure-Script-Exports"
+
+"""VMName"",""ResourceGroup"",""VMSize"",""HUB Enabled"",""Number of Cores"",""OSType"",""Required Licenses""" | Out-File -Encoding ASCII -FilePath "$CSVPath\$file-HubCSV.csv"
+
 
 #Getting HUB Licensing Info
 Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Getting HUB Licensing Information for Windows Virtual Machines <br />"
@@ -72,7 +77,7 @@ foreach ($VM in Get-AzureRmVm | Where-Object {$_.StorageProfile.OsDisk.OsType -e
 
     #Write Output for VM to CSV
     """"+$VM.Name+""","""+$VM.ResourceGroupName+""","""+$VM.HardwareProfile.VmSize+""","""+$HUB+""","""+$Cores+""","""+$VM.StorageProfile.OsDisk.OsType+""","""+$Licenses+"""" | 
-    Out-File -Encoding ASCII -FilePath "$CSVPath\$username@$subid.csv" -Append
+    Out-File -Encoding ASCII -FilePath "$CSVPath\$file-HubCSV.csv" -Append
 }
 
 Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] HUB Licensing Information Obtained Successfully! <br />"

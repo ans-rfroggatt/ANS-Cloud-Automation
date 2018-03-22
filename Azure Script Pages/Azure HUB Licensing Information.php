@@ -55,17 +55,17 @@ elseif((isset($_POST["submit"])) && (!empty($_POST["username"])) && (!empty($_PO
     $csv = $user[0] . $subid . "-HubCSV.csv";
            
     ?>
-    <form method="get" action="../Azure Script Exports/<?= $csv ?>" >
+    <form method="get" action="../Azure-Script-Exports/<?= $csv ?>" >
         <input type="submit" name="download-csv" value="Download CSV" />
     </form>
     <?php 
     
     // Button to Download Log File
-    $log = "../Azure Script Logs/" . $user[0] . $subid . "-HubLog.txt";
+    $log = "../Azure-Script-Logs/" . $user[0] . $subid . "-HubLog.txt";
     file_put_contents($log, $query);
     
     ?>
-    <form method="get" action="../Azure Script Logs/<?= $log ?>" >
+    <form method="get" action="../Azure-Script-Logs/<?= $log ?>" >
         <input type="submit" name="download-log" value="Download Log" />
     </form>
     <?php             
