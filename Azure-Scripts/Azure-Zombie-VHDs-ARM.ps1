@@ -27,7 +27,6 @@ $Credentials = New-Object System.Management.Automation.PSCredential ($username, 
 
 #Import AzureRM Module
 $env:PSModulePath = $env:PSModulePath + ";D:\home\site\wwwroot\Modules"
-
 Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Importing modules... <br />"
 Import-Module -Name AzureRM
 Import-Module -Name Azure.Storage
@@ -39,7 +38,7 @@ $file = $username.Split('@')
 $file = $file[0] + $subid
 
 #Set CSV Headers and Path
-$CSVPath = "D:\home\site\wwwroot\Azure-Script-Exports"
+$CSVPath = "$PSScriptRoot\..\Azure-Script-Exports"
 Write-Output "<p> </p>"
 """Uri"",""AttachedToVMName"",""Lease Status"",""Lease State"",""Storage Type"",""Storage Tier"",""StorageAccount Name"",""Location"",""Resource Group"",""Size GB""" | Out-File -Encoding ASCII -FilePath "$CSVPath\$file-ARMVHD-CSV.csv"
 

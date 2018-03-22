@@ -5,7 +5,7 @@
 <!-- Banner -->
 <div class="page-banner">
   <div class="container text-center">
-    <h1>Azure HUB Licensing Information</h1>      
+    <h1>Azure Convert Availability Set to Mangaged Disks</h1>      
     <p>Please complete the below fields to run the PowerShell script</p>
   </div>
 </div>
@@ -18,43 +18,39 @@ if(!isset($_POST["submit"]))
 {
     ?>
     <div class="script-form" >
-    <form class="script-form" name="testForm" id="testForm" action="Azure HUB Licensing Information.php" method="post" />
+    <form class="script-form" name="testForm" id="testForm" action="Convert AVSet Managed Disks.php" method="post" />
         Username*:  <input type="text" name="username" id="username" maxlength="40" value="<?php echo 'username@company.com'; ?>" /><br />	
 	Password*:  <input type="password" name="password" id="password" /><br />       		
 	Azure Subscription ID*: <input type="text" name="subid" id="subid" minlength="36" maxlength="36" value="<?php echo 'abcdefgh-1234-5678-abcd-123456789abc'; ?>" /><br />	
+        Resource Group*:  <input type="text" name="rgName" id="rgName" /><br />
+        Availability Set Name*:  <input type="text" name="avSetName" id="avSetName" /><br />
+        Wait Time*:  <input type="text" name="Time" id="Time" value="<?php echo 'Time in seconds to wait between each VM'; ?>" /><br />
         <input type="submit" name="submit" id="submit" value="Submit" />
     </form>
     </div>
     <?php    
 }
 // Else if submit was pressed, check if all of the required variables have a value:
-elseif((isset($_POST["submit"])) && (!empty($_POST["username"])) && (!empty($_POST["password"])) && (!empty($_POST["subid"])))
+elseif((isset($_POST["submit"])) && (!empty($_POST["username"])) && (!empty($_POST["password"])) && (!empty($_POST["subid"])) && (!empty($_POST["rgName"])) && (!empty($_POST["avSetName"])) && (!empty($_POST["Time"])))
 {
     // Get the variables submitted by POST in order to pass them to the PowerShell script:
     $username = $_POST["username"];
     $password = $_POST["password"];
     $subid = $_POST["subid"];
+    $rgName = $_POST["rgName"];
+    $avSetName = $_POST["avSetName"];
+    $Time= $_POST["Time"];
          
     // Path to the PowerShell script. Remember double backslashes:
-    $psScriptPath = "../Azure-Scripts/Azure-HUB-Licensing-Information.ps1";
+    $psScriptPath = "../Azure-Scripts/Convert-AVSet-Managed-Disks.ps1";
  
     // Execute the PowerShell script, passing the parameters:
-    $query = shell_exec("powershell -command $psScriptPath -username '$username' -password '$password' -subid '$subid'");
+    $query = shell_exec("powershell -command $psScriptPath -username '$username' -password '$password' -subid '$subid' -rgName '$rgName' -$avSetName '$avSetName' -Time '$Time'");
     
     ?>
     <div class="script-output" >
         <p><?= $query ?></p>    
     </div>    
-    <?php 
-    
-    // Button to download CSV
-    $user = explode('@',$username);
-    $csv = $user[0] . $subid . "-HubCSV.csv";
-           
-    ?>
-    <form method="get" action="../Azure-Script-Exports/<?= $csv ?>" >
-        <input type="submit" name="download-csv" value="Download CSV" />
-    </form>
     <?php 
     
     // Button to Download Log File
@@ -69,7 +65,7 @@ elseif((isset($_POST["submit"])) && (!empty($_POST["username"])) && (!empty($_PO
 }
 
 //Else the user hit submit without all required fields being filled out:
-else 
+else
 {
     ?>
     <div class="no-fields" >

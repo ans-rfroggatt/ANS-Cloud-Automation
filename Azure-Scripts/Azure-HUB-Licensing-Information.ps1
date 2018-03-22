@@ -20,7 +20,6 @@ $Credentials = New-Object System.Management.Automation.PSCredential ($username, 
 
 #Import AzureRM Module
 $env:PSModulePath = $env:PSModulePath + ";D:\home\site\wwwroot\Modules"
-
 Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Importing module... <br />"
 Import-Module -Name AzureRM 
 Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Successfully Imported module <br />"
@@ -28,7 +27,7 @@ Write-Output "<p> </p>"
 
 #Login to Azure Environment
 Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Logging in to Azure Account... <br />"
-Login-AzureRmAccount -ServicePrincipal -ApplicationId  86bbbb29-e1bb-4aef-a204-359eed13067d -Password 2ATmFMSD0jvjFW/wGTIkwHRSABLrInmmdtsrkYEdR2M= -TenantId 207c1c4e-52d3-4eb2-9625-adcd3968b029
+Login-AzureRmAccount -Credential $Credentials
 Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Successfully logged in to Azure Account <br />"
 Write-Output "<p> </p>"
 
@@ -43,7 +42,7 @@ $file = $username.Split('@')
 $file = $file[0] + $subid
 
 #Set CSV Headers and Path
-$CSVPath = "D:\home\site\wwwroot\Azure-Script-Exports"
+$CSVPath = "$PSScriptRoot\..\Azure-Script-Exports"
 
 """VMName"",""ResourceGroup"",""VMSize"",""HUB Enabled"",""Number of Cores"",""OSType"",""Required Licenses""" | Out-File -Encoding ASCII -FilePath "$CSVPath\$file-HubCSV.csv"
 

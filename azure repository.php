@@ -20,7 +20,7 @@ include 'Template.php';
   <div class="row">
     <div class="col-sm-1">
         <a href="/Azure Script Pages/Azure HUB Licensing Information.php">
-            <p>HUB Licensing Usage</p>
+            <p>Azure HUB Licensing Usage</p>
             <img src="Images/Powershell_icon.png" class="img-responsive" style="width:100%" alt="Image"
         </a>
     </div>
@@ -39,6 +39,18 @@ include 'Template.php';
     <div class="col-sm-1">
         <a href="/Azure Script Pages/Azure Modernisation.php">
             <p>Azure VM Modernisation</p>
+            <img src="/Images/Powershell_icon.png" class="img-responsive" style="width:100%" alt="Image"
+        </a>
+    </div>
+    <div class="col-sm-1">
+        <a href="/Azure Script Pages/Convert AVSet Managed Disks.php">
+            <p>Convert AvSet Managed Disks</p>
+            <img src="/Images/Powershell_icon.png" class="img-responsive" style="width:100%" alt="Image"
+        </a>
+    </div>
+    <div class="col-sm-1">
+        <a href="/Azure Script Pages/Convert VM Managed Disks.php">
+            <p>Convert VM Managed Disks</p>
             <img src="/Images/Powershell_icon.png" class="img-responsive" style="width:100%" alt="Image"
         </a>
     </div>

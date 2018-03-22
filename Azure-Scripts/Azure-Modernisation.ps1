@@ -19,7 +19,6 @@ $Credentials = New-Object System.Management.Automation.PSCredential ($username, 
 
 #Import AzureRM Module
 $env:PSModulePath = $env:PSModulePath + ";D:\home\site\wwwroot\Modules"
-
 Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Importing module... <br />"
 Import-Module -Name AzureRM 
 Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Successfully Imported module <br />"
@@ -30,8 +29,8 @@ Write-Output "<p> </p>"
 $LogFile = "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Log Output from Instance Modernisation Checks... <br />"
 
 #Set CSV Path and Import CSV
-$CSVPath = "D:\home\site\wwwroot\Azure-Script-Exports"
-$CSV = Import-Csv "D:\home\site\wwwroot\Azure-Scripts\Azure Instance Modernisation Table.csv"
+$CSVPath = "$PSScriptRoot\..\Azure-Script-Exports"
+$CSV = Import-Csv "$PSScriptRoot\..\Azure-Scripts\Azure Instance Modernisation Table.csv"
 
 #Create File Name
 $file = $username.Split('@')
