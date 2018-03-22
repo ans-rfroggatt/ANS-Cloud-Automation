@@ -1,0 +1,36 @@
+ANS - Azure HUB Licensing Information <br />
+Version 1.0.0 <br />
+<p> </p>
+[22/04/18 09:04:42] Importing module... <br />
+[22/04/18 09:04:56] Successfully Imported module <br />
+<p> </p>
+[22/04/18 09:04:56] Logging in to Azure Account... <br />
+
+
+Account          : rfroggatt@ansgroup.co.uk
+SubscriptionName : Microsoft Azure Enterprise
+SubscriptionId   : 0dddec2a-fb83-40e7-9a0d-6dc78e6f65c1
+TenantId         : 1eba9f97-0b4f-4b17-b77f-b2d4487ad3c4
+Environment      : AzureCloud
+
+[22/05/18 09:05:00] Successfully logged in to Azure Account <br />
+<p> </p>
+[22/05/18 09:05:00] Selecting Azure Subscripion <br />
+
+Name               : [rfroggatt@ansgroup.co.uk, 
+                     9c15dde4-f4fa-4de2-8655-8b81421fd628]
+Account            : rfroggatt@ansgroup.co.uk
+Environment        : AzureCloud
+Subscription       : 9c15dde4-f4fa-4de2-8655-8b81421fd628
+Tenant             : 207c1c4e-52d3-4eb2-9625-adcd3968b029
+TokenCache         : Microsoft.Azure.Commands.Common.Authentication.Authenticat
+                     ionStoreTokenCache
+VersionProfile     : 
+ExtendedProperties : {}
+
+[22/05/18 09:05:02] Subscription successfully selected <br />
+<p> </p>
+[22/05/18 09:05:02] Getting HUB Licensing Information for Windows Virtual Machines <br />
+[22/05/18 09:05:04] HUB Licensing Information Obtained Successfully! <br />
+
+

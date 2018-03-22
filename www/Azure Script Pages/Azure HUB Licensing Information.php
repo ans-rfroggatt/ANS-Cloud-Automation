@@ -38,7 +38,7 @@ elseif((isset($_POST["submit"])) && (!empty($_POST["username"])) && (!empty($_PO
     // $username = cleanData($_POST["username"]);
          
     // Path to the PowerShell script. Remember double backslashes:
-    $psScriptPath = "C:\\Azure-HUB-Licensing-Information.ps1";
+    $psScriptPath = "../Azure-Scripts/Azure-HUB-Licensing-Information.ps1";
  
     // Execute the PowerShell script, passing the parameters:
     $query = shell_exec("powershell -command $psScriptPath -username '$username' -password '$password' -subId '$subid'");
