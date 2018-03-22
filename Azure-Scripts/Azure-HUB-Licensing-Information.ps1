@@ -28,7 +28,7 @@ Write-Output "<p> </p>"
 
 #Login to Azure Environment
 Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Logging in to Azure Account... <br />"
-Login-AzureRmAccount -Credential $Credentials
+Login-AzureRmAccount -ServicePrincipal -ApplicationId  86bbbb29-e1bb-4aef-a204-359eed13067d -Password 2ATmFMSD0jvjFW/wGTIkwHRSABLrInmmdtsrkYEdR2M= -TenantId 207c1c4e-52d3-4eb2-9625-adcd3968b029
 Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Successfully logged in to Azure Account <br />"
 Write-Output "<p> </p>"
 
