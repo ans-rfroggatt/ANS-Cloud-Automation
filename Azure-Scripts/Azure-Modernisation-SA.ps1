@@ -10,7 +10,7 @@ Param(
 
 Write-Output ""
 Write-Output "ANS Unmodernised Instances <br />"
-Write-Output "Version 3.0.0 <br />"
+Write-Output "Version 4.0.0 <br />"
 Write-Output "<p> </p>"
 
 #Build Credentials
@@ -131,4 +131,5 @@ foreach ($VM in $AllVMs) {
 }
 
 #Export Log File
-Out-File -InputObject $LogFile -FilePath "$CSVPath\$file-ModLog.txt"
+Set-AzureRmSubscription -SubscriptionId $SubscriptionId -CurrentStorageAccountName anscloudautomation
+Set-AzureStorageBlobContent -File $LogFile -Container csv-exports

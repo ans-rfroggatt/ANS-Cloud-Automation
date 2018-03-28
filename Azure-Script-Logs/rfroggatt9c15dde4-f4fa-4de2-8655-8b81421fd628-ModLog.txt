@@ -1,0 +1,16 @@
+
+ANS Unmodernised Instances <br />
+Version 3.0.0 <br />
+<p> </p>
+[26/46/18 01:46:37] Importing module... <br />
+[26/46/18 01:46:37] Module Error - The specified module 'AzureRM' was not loaded because no valid module file was found in any module directory. <br />
+<p> </p>
+[26/46/18 01:46:37] Logging in to Azure Account... <br />
+[26/47/18 01:47:31] Login Error - user_realm_discovery_failed: User realm discovery failed: The operation has timed out <br />
+<p> </p>
+[26/47/18 01:47:31] Selecting Azure Subscripion <br />
+[26/47/18 01:47:52] Subscription Error - Run Login-AzureRmAccount to login. <br />
+<p> </p>
+[26/47/18 01:47:52] Gathering all Virtual Machines... <br />
+[26/48/18 01:48:15] All Virtual Machines gathered successfully <br />
+<p> </p>

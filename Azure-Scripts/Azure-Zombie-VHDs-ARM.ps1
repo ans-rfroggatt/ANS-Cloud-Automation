@@ -26,12 +26,28 @@ $secpassword = ConvertTo-SecureString -String $password -AsPlainText -Force
 $Credentials = New-Object System.Management.Automation.PSCredential ($username, $secpassword)
 
 #Import AzureRM Module
-$env:PSModulePath = $env:PSModulePath + ";D:\home\site\wwwroot\Modules"
-Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Importing modules... <br />"
-Import-Module -Name AzureRM
-Import-Module -Name Azure.Storage
-Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Successfully Imported modules <br />"
+Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Importing module AzureRM... <br />"
+Import-Module -Name AzureRM -ErrorVariable AzureModuleError -ErrorAction SilentlyContinue
+if ($AzureModuleError) {
+Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Module Error - $ModuleError <br />"
 Write-Output "<p> </p>"
+}
+else {
+"<br />"
+Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Successfully Imported AzureRM module <br />"
+Write-Output "<p> </p>"
+}
+
+Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Importing module AzureStorage... <br />"
+Import-Module -Name Azure.Storage -ErrorVariable StorageModuleError -ErrorAction SilentlyContinue
+if ($StorageModuleError) {
+Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Module Error - $StorageModuleError <br />"
+Write-Output "<p> </p>"
+}
+else {
+Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Successfully Imported AzureStorage module <br />"
+Write-Output "<p> </p>"
+}
 
 #Create File Name
 $file = $username.Split('@')
@@ -45,16 +61,29 @@ Write-Output "<p> </p>"
 
 #Login to Azure Environment
 Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Logging in to Azure Account... <br />"
-Login-AzureRmAccount -Credential $Credentials
+Login-AzureRmAccount -Credential $Credentials -ErrorVariable LoginError -ErrorAction SilentlyContinue
+if ($LoginError) {
+Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Login Error - $LoginError <br />"
+Write-Output "<p> </p>"
+}
+else {
+"<br />"
 Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Successfully logged in to Azure Account <br />"
 Write-Output "<p> </p>"
+}
 
-#Select SubscriptionId
+#Set Subscription Id
 Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Selecting Azure Subscripion <br />"
-Select-AzureRmSubscription -SubscriptionId $subId
+Select-AzureRmSubscription -SubscriptionId $subId  -ErrorVariable SubscriptionError -ErrorAction SilentlyContinue
+if ($SubscriptionError) {
+Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Subscription Error - $SubscriptionError <br />"
+Write-Output "<p> </p>"
+}
+else {
+"<br />"
 Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Subscription successfully selected <br />"
 Write-Output "<p> </p>"
-
+}
 
 #Option 1 - Collect for Single Storage Account
 If ($option -eq "1") {

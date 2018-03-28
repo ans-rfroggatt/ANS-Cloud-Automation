@@ -54,6 +54,18 @@ include 'Template.php';
             <img src="/Images/Powershell_icon.png" class="img-responsive" style="width:100%" alt="Image"
         </a>
     </div>
+    <div class="col-sm-1">
+        <a href="/Azure Script Pages/Tag VM Associated Resources.php">
+            <p>Tag VM Associated Resources</p>
+            <img src="/Images/Powershell_icon.png" class="img-responsive" style="width:100%" alt="Image"
+        </a>
+    </div>
+    <div class="col-sm-1">
+        <a href="/Azure Script Pages/Azure Login.php">
+            <p>Azure Login Test</p>
+            <img src="/Images/Powershell_icon.png" class="img-responsive" style="width:100%" alt="Image"
+        </a>
+    </div>
   </div>
 </div><br>
 

@@ -2,8 +2,7 @@
 <?php
 include 'Template.php';
 ?>
-<link rel="stylesheet" href="/Styles/Index-Stylesheet.css">
-
+<link rel="stylesheet" href="/Styles/Index-StyleSheet.css">
 
 <!-- Banner -->
 <div class="page-banner">
