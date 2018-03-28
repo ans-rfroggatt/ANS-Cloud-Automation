@@ -20,8 +20,8 @@ include 'Template.php';
   <h3>PowerShell Scripts</h3><br>
   <div class="row">
     <div class="col-sm-1">
-        <a href="aws repository.php.php">
-            <p> Test Link</p>
+        <a href="/AWS Script Pages/AWS Modernisation.php">
+            <p> AWS Instance Modernisation</p>
             <img src="/Images/Powershell_icon.png" class="img-responsive" style="width:100%" alt="Image"
         </a>
     </div>
