@@ -8,7 +8,6 @@ Param(
     [string]$subid
 )
 
-Write-Output ""
 Write-Output "ANS Unmodernised Instances <br />"
 Write-Output "Version 3.0.0 <br />"
 Write-Output "<p> </p>"
