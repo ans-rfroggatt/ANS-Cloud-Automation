@@ -17,6 +17,12 @@
 if(!isset($_POST["submit"]))
 {
     ?>
+    <div class = "github">
+    <a href="https://raw.githubusercontent.com/ans-rfroggatt/ANS-Cloud-Automation/master/Azure-Scripts/Azure-Zombie-VHDs-Classic.ps1">
+        <img  class="github-logo" src="/Images/GitHub.png" >
+    </a>
+    </div> 
+
     <div class="script-form" >
         <form class="script-form" name="testForm" id="testForm" action="Azure Zombie VHDs (Classic).php" method="post" />
         Username*:  <input type="text" name="username" id="username" maxlength="40" value="<?php echo 'username@company.com'; ?>" /><br />	

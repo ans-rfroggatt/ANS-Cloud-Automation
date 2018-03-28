@@ -17,6 +17,12 @@
 if(!isset($_POST["submit"]))
 {
     ?>
+    <div class = "github">
+    <a href="https://raw.githubusercontent.com/ans-rfroggatt/ANS-Cloud-Automation/master/Azure-Scripts/Azure-Login.ps1">
+        <img  class="github-logo" src="/Images/GitHub.png" >
+    </a>
+    </div> 
+
     <div class="script-form" >
     <form class="script-form" name="testForm" id="testForm" action="Azure HUB Licensing Information.php" method="post" />
         Username*:  <input type="text" name="username" id="username" maxlength="40" value="<?php echo 'username@company.com'; ?>" /><br />	
@@ -25,6 +31,7 @@ if(!isset($_POST["submit"]))
         <input type="submit" name="submit" id="submit" value="Submit" />
     </form>
     </div>
+   
     <?php    
 }
 // Else if submit was pressed, check if all of the required variables have a value:

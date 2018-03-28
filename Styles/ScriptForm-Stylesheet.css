@@ -72,6 +72,17 @@ input[type=submit]:hover {
     padding: 20px;
 }
 
+/* GitHub Links */
+.github {
+    width:100%;
+    height:10%;
+}
+.github-logo {
+    margin-top:20px;
+    margin-left:50%;
+    width:5%;
+    height:100%;
+}
 
 
 

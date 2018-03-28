@@ -17,6 +17,12 @@
 if(!isset($_POST["submit"]))
 {
     ?>
+    <div class = "github">
+    <a href="https://raw.githubusercontent.com/ans-rfroggatt/ANS-Cloud-Automation/master/Azure-Scripts/Get-EA-PriceList.ps1">
+        <img  class="github-logo" src="/Images/GitHub.png" >
+    </a>
+    </div> 
+
     <div class="script-form" >
         <form class="script-form" name="testForm" id="testForm" action="Azure EA Price List.php" method="post" />
         Enrollment ID*:  <input type="text" name="EnrollmentID" id="EnrollmentID" maxlength="15" /><br />	

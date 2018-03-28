@@ -17,6 +17,12 @@
 if(!isset($_POST["submit"]))
 {
     ?>
+    <div class = "github">
+    <a href="https://raw.githubusercontent.com/ans-rfroggatt/ANS-Cloud-Automation/master/AWS-Scripts/AWS-Modernisation.ps1">
+        <img  class="github-logo" src="/Images/GitHub.png" >
+    </a>
+    </div> 
+
     <div class="script-form" >
         <form class="script-form" name="testForm" id="testForm" action="AWS Modernisation.php" method="post" />
         Customer*:  <input type="text" name="Customer" id="Customer" maxlength="40" /><br />	
