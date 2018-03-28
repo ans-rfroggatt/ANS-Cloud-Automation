@@ -5,7 +5,7 @@
 <!-- Banner -->
 <div class="page-banner">
   <div class="container text-center">
-    <h1>Azure Login Test</h1>      
+    <h1>Azure EA Price List</h1>      
     <p>Please complete the below fields to run the PowerShell script</p>
   </div>
 </div>
@@ -18,28 +18,26 @@ if(!isset($_POST["submit"]))
 {
     ?>
     <div class="script-form" >
-    <form class="script-form" name="testForm" id="testForm" action="Azure HUB Licensing Information.php" method="post" />
-        Username*:  <input type="text" name="username" id="username" maxlength="40" value="<?php echo 'username@company.com'; ?>" /><br />	
-	Password*:  <input type="password" name="password" id="password" /><br />       		
-	Azure Subscription ID*: <input type="text" name="subid" id="subid" minlength="36" maxlength="36" value="<?php echo 'abcdefgh-1234-5678-abcd-123456789abc'; ?>" /><br />	
+        <form class="script-form" name="testForm" id="testForm" action="Azure EA Price List.php" method="post" />
+        Enrollment ID*:  <input type="text" name="EnrollmentID" id="EnrollmentID" maxlength="15" /><br />	
+	EA API Key*:  <input type="password" name="APIKey" id="APIKey"  /><br />	     		
         <input type="submit" name="submit" id="submit" value="Submit" />
     </form>
     </div>
     <?php    
 }
 // Else if submit was pressed, check if all of the required variables have a value:
-elseif((isset($_POST["submit"])) && (!empty($_POST["username"])) && (!empty($_POST["password"])) && (!empty($_POST["subid"])))
+elseif((isset($_POST["submit"])) && (!empty($_POST["EnrollmentID"])) && (!empty($_POST["APIKey"])))
 {
     // Get the variables submitted by POST in order to pass them to the PowerShell script:
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-    $subid = $_POST["subid"];
+    $EnrollmentID = $_POST["EnrollmentID"];
+    $APIKey = $_POST["APIKey"];
          
     // Path to the PowerShell script. Remember double backslashes:
-    $psScriptPath = "../Azure-Scripts/Azure-Login.ps1";
+    $psScriptPath = "../Azure-Scripts/Get-EA-PriceList.ps1";
  
     // Execute the PowerShell script, passing the parameters:
-    $query = shell_exec("powershell -command $psScriptPath -subid '$subid'");
+    $query = shell_exec("powershell -command $psScriptPath -EnrollmentID '$EnrollmentID' -APIKey '$APIKey'");
     
     ?>
     <div class="script-output" >
@@ -48,7 +46,7 @@ elseif((isset($_POST["submit"])) && (!empty($_POST["username"])) && (!empty($_PO
     <?php 
     
     // Button to download CSV
-    $csv = $subid . "-HubCSV.csv";
+    $csv = "$EnrollmentID-PriceList.csv";
            
     ?>
     <form method="get" action="../Azure-Script-Exports/<?= $csv ?>" >
@@ -57,7 +55,7 @@ elseif((isset($_POST["submit"])) && (!empty($_POST["username"])) && (!empty($_PO
     <?php 
     
     // Button to Download Log File
-    $log = "../Azure-Script-Logs/" . $subid . "-HubLog.txt";
+    $log = "../Azure-Script-Logs/PriceListLog.txt";
     file_put_contents($log, $query);
     
     ?>

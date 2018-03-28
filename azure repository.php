@@ -61,8 +61,14 @@ include 'Template.php';
         </a>
     </div>
     <div class="col-sm-1">
+        <a href="/Azure Script Pages/Azure EA Price List.php">
+            <p>Export EA Price <br /> List</p>
+            <img src="/Images/Powershell_icon.png" class="img-responsive" style="width:100%" alt="Image"
+        </a>
+    </div>
+    <div class="col-sm-1">
         <a href="/Azure Script Pages/Azure Login.php">
-            <p>Azure Login Test</p>
+            <p>Azure Login <br /> Test</p>
             <img src="/Images/Powershell_icon.png" class="img-responsive" style="width:100%" alt="Image"
         </a>
     </div>
