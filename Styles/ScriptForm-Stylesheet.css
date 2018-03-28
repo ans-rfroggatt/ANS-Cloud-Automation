@@ -79,7 +79,8 @@ input[type=submit]:hover {
 }
 .github-logo {
     margin-top:20px;
-    margin-left:50%;
+    margin-left:47.5%;
+    margin-right:47.5%;
     width:5%;
     height:100%;
 }
