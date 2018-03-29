@@ -25,6 +25,12 @@ include 'Template.php';
             <img src="/Images/Powershell_icon.png" class="img-responsive" style="width:100%" alt="Image"
         </a>
     </div>
+    <div class="col-sm-1">
+        <a href="/AWS Script Pages/AWS Login.php">
+            <p> AWS Login <br /> Test</p>
+            <img src="/Images/Powershell_icon.png" class="img-responsive" style="width:100%" alt="Image"
+        </a>
+    </div>
   </div>
 </div><br>
 
