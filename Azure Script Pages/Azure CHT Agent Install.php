@@ -18,7 +18,7 @@ if(!isset($_POST["submit"]))
 {
     ?>
     <div class = "github">
-    <a href="https://raw.githubusercontent.com/ans-rfroggatt/ANS-Cloud-Automation/master/Azure-Scripts/Azure-HUB-Licensing-Information.ps1">
+    <a href="https://raw.githubusercontent.com/ans-rfroggatt/ANS-Cloud-Automation/master/Azure-Scripts/SetCustomScriptExtension.ps1">
         <img  class="github-logo" src="/Images/GitHub.png" >
     </a>
     </div> 
