@@ -34,7 +34,7 @@ Write-Output "<p> </p>"
 
 #Set CSV Path and Import CSV
 $CSVPath = "$PSScriptRoot\..\AWS-Script-Exports"
-$CSV = Import-Csv "$PSScriptRoot\..\Azure-Scripts\AWS Instance Modernisation Table.csv"
+$CSV = Import-Csv "$PSScriptRoot\..\AWS-Scripts\AWS Instance Modernisation Table.csv"
 
 
 #Set Log Output Header
@@ -76,9 +76,16 @@ foreach($TableEntry in $CSV) {
 #Login to AWS
 Write-Output "<p> </p>"
 Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Logging in to AWS Account... <br />"
-Set-AWSCredentials -AccessKey $SecAccessKey -SecretKey $SecSecretKey
+Set-AWSCredentials -AccessKey $SecAccessKey -SecretKey $SecSecretKey -ErrorVariable LoginError -ErrorAction SilentlyContinue
+if ($LoginError) {
+Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Login Error - $LoginError <br />"
+Write-Output "<p> </p>"
+}
+else {
+"<br />"
 Write-Output "[$(get-date -Format "dd/mm/yy hh:mm:ss")] Successfully logged in to AWS Account <br />"
 Write-Output "<p> </p>"
+}
 
 
 #Get All EC2 Instances
